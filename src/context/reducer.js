@@ -1,12 +1,17 @@
 
 const reducer =(state, action)=>{
     switch(action.type){
-        case 'UPDATE_USER':
+        case 'OPEN_LOGIN':
+            return{...state, openLogin: true};
+        
+        case 'ClOSE_LOGIN':
+            return{...state, openLogin: false};
 
-                return{...state, currentUser:action.peyload}
+        case 'UPDATE_USER':
+            return{...state, currentUser: action.payload};
 
         default:
-            throw new Error ('No matched action!')
+            throw new Error ('No matched action!');
     }
 }
 
